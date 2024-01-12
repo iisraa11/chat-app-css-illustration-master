@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://github.com/iisraa11/chat-app-css-illustration-master)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Add live site URL here](https://iisraa11.github.io/chat-app-css-illustration-master/)
 
 ## My process
 
