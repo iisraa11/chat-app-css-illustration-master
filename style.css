@@ -1,0 +1,460 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+html {
+    font-size: 0.86rem;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.4;
+}
+
+img,
+svg,
+picture,
+video,
+canvas {
+    display: block;
+    max-width: 100%;
+}
+
+:root {
+
+    /*Font Family*/
+    --ff-primary: Rubik, sans-serif;
+
+    /*Primary*/
+    /*Text*/
+    --pale-violet
+    /*(sub-heading at the top of the app UI)*/
+    : hsl(276, 100%, 81%);
+    --moderate-violet
+    /*(chat on the left)*/
+    : hsl(276, 55%, 52%);
+    --desaturated-dark-violet
+    /*(chat on the right)*/
+    : hsl(271, 15%, 43%);
+    --grayish-blue
+    /*(placeholder text)*/
+    : hsl(206, 6%, 79%);
+    --dark-desaturated-violet
+    /*(main heading)*/
+    : hsl(271, 36%, 24%);
+    --dark-grayish-violet
+    /*(paragraph)*/
+    : hsl(270, 7%, 64%, );
+
+    /*Secondary*/
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet
+    /*(app background)*/
+    : hsl(270, 20%, 96%);
+    --dark-desaturated-violet
+    /*(submit button background)*/
+    : hsl(271, 36%, 24%);
+    --light-Magenta
+    /*(radio button outline)*/
+    : hsl(289, 100%, 72%);
+
+    /*Gradient*/
+    --background-gradient: linear-gradient(hsl(293, 100%, 63%),
+            hsl(264, 100%, 61%));
+
+    --gradient-to-right: linear-gradient(to left, hsl(293, 100%, 63%),
+            hsl(264, 100%, 61%));
+
+    --gradient-to-left: linear-gradient(to right, hsl(293, 100%, 63%),
+            hsl(264, 100%, 61%));
+
+    /*Font-Weight*/
+    --fw-normal: 400;
+    --fw-bold: 500;
+    --fw-black: 700;
+
+}
+
+body {
+    font-family: var(--ff-primary);
+    font-size: 1rem;
+    background-color: var(--light-grayish-violet);
+}
+
+.container {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    padding-inline: 1rem;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    width: 35%;
+    height: 90%;
+    left: -130px;
+    background: var(--background-gradient);
+    border-radius: 0 0 100vh 100vh;
+    z-index: -1;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    width: 35%;
+    height: 90%;
+    right: -130px;
+    bottom: 0;
+    background: var(--background-gradient);
+    border-radius: 100vh 100vh 0 0;
+    z-index: -1;
+    opacity: 0.03;
+}
+
+.main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 70rem; 
+}
+
+.phone {
+    position: relative;
+    width: 21rem;
+    height: 42.5rem;
+    background-color: var(--white);
+    border-radius: 2rem;
+    border: 0.75rem solid var(--white);
+    font-size: 0.7rem;
+    box-shadow: 8px 1px 8px #ddd;
+}
+
+.header {
+    display: flex;
+    height: 14%;
+    justify-content: space-between;
+    background: var(--gradient-to-right);
+    color: var(--white);
+    padding: 1rem;
+    padding-top: 2.25rem;
+    border-radius: 2rem 2rem 0.5rem 0.5rem;
+    font-weight: var(--fw-bold);
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    width: 11.5rem;
+    height: 2.25rem;
+    border-radius: 0 0 1.5rem 1.5rem;
+    background-color: var(--white);
+    top: -0.563rem;
+    left: 50%; /* Cambiado a 50% para centrar horizontalmente */
+    transform: translateX(-50%); /* Centra el elemento correctamente */
+}
+
+.button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.button svg {
+    fill: var(--white);
+}
+
+.btn-back svg {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.btn-points svg {
+    width: 1.375rem;
+    height: 1.375rem;
+}
+
+.left-part {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.gap-group {
+    display: flex;
+    gap: 0.25rem;
+}
+
+
+.avatar {
+    width: 2.25rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+}
+
+.person {
+    font-size: 1rem;
+}
+
+.aviability {
+    font-size: 0.75rem;
+    color: var(--pale-violet);
+}
+
+.background {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    height: 86%;
+    background-color: var(--light-grayish-violet);
+    border-radius: 0 0 2rem 2rem;
+    padding: 1rem;
+}
+
+.chat-text {
+    width: 100%;
+    max-height: 88%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.box-message {
+    width: 65%;
+    padding: 0.5rem;
+}
+
+.box-images {
+    width: 65%;
+    display: flex;
+    align-self: end;
+    justify-content: end;
+    gap: 0.75rem;
+    padding: 0 !important;
+}
+
+.box-images img {
+    width: 30%;
+    border-radius: 0.75rem;
+}
+
+.box-left {
+    color: var(--moderate-violet);
+    background-color: #EDE5F4;
+    border-radius: 1rem 1rem 1rem 0.25rem;
+    align-self: start;
+}
+
+.box-right {
+    align-self: end;
+    background-color: var(--white);
+    border-radius: 1rem 1rem 0.25rem 1rem;
+    box-shadow: 1px 3px 4px #ddd;
+}
+
+.fit-content {
+    width: fit-content !important;
+}
+
+
+.service {
+    width: 75%;
+    background: var(--gradient-to-left);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1rem 1rem 1rem 0.25rem;
+    padding: 0.75rem;
+}
+
+.service span {
+    font-size: 1.125rem;
+    font-weight: var(--fw-black);
+}
+
+.circle {
+    width: 1rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.chat-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.chat-box button {
+    border: none;
+    border-radius: 50%;
+    background-color: var(--dark-desaturated-violet);
+    cursor: pointer;
+    margin-inline-end: 0.5rem;
+}
+
+.chat-box svg {
+    width: 1.625rem;
+    height: 1.625rem;
+    fill: white;
+}
+
+.chat-box input {
+    background: transparent;
+    border: none;
+    margin-left: 1rem;
+    opacity: .5;
+}
+
+.chat-box input:focus {
+    outline: none;
+}
+
+.info {
+    position: relative;
+    width: 47%;
+    font-weight: var(--fw-bold);
+    display: grid;
+    place-content: start;
+    gap: 1rem;
+    line-height: 1.7;
+}
+
+.info h1 {
+    color: var(--dark-desaturated-violet);
+    font-size: 3rem;
+}
+
+.info p {
+    font-size: 1.125rem;
+    color: var(--dark-grayish-violet);
+    opacity: 0.3;
+}
+
+/*Chat Interface Animation*/
+
+@keyframes appear {
+    0%{
+        transform: translateY(37.5rem);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.chat-text {
+    animation: 8s appear linear;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.box-message {
+    animation: 1s pop ease-in-out forwards;
+    transform: scale(0);
+}
+
+.box-message:nth-child(1) {
+    animation-delay: 1.2s;
+}
+
+.box-message:nth-child(2) {
+    animation-delay: 2.4s;
+}
+
+.box-message:nth-child(3) {
+    animation-delay: 3.2s;
+}
+
+.box-message:nth-child(4) {
+    animation-delay: 4s;
+}
+
+.box-message:nth-child(5) {
+    animation-delay: 4.8s;
+}
+
+.box-message:nth-child(6) {
+    animation-delay: 5.6s;
+}
+
+.box-message:nth-child(7) {
+    animation-delay: 6.4s;
+}
+
+.box-message:nth-child(8) {
+    animation-delay: 7.2s;
+}
+
+
+@media screen and (max-width:1024px) {
+    html {
+        font-size: 0.75rem;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .container::before,
+    .container::after{
+        width: 70%;
+        height: 48%;
+    }
+
+    .main {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .info {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+
+@media screen and (max-width:407px) {
+    html {
+        font-size: 0.65rem;
+    }
+}
+
+@media screen and (max-width:331px) {
+    html {
+        font-size: 0.45rem;
+    }
+
+    .chat-box{
+        margin-top: 0.75rem;
+    }
+
+    .header::before {
+        height: 2rem;
+    }
+
+    .info {
+        width: 65%;
+    }
+}
