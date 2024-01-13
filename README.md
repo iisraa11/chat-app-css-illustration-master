@@ -56,8 +56,8 @@ Users should be able to:
 
 ## Author
 
-- Frontend Mentor - [@iisraa11](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@iisraa11](https://www.frontendmentor.io/profile/iisraa11)
 - Github - [@iisraa11](https://github.com/iisraa11)
-- LinkedIn - [](https://www.linkedin.com/in/israel-guerrero-ortiz-6201a0168/)
+- LinkedIn - [Israel Guerrero](https://www.linkedin.com/in/israel-guerrero-ortiz-6201a0168/)
 
 
